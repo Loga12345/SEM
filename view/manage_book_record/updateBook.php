@@ -144,37 +144,37 @@
 							
 							<tr>
 								<th>Book Title</th>
-								<td><input type="text" id="Book_title" name="Book_title" value="<?php echo $Book_title ?>"></td>
+								<td><input type="text" id="Book_title" name="Book_title" value="<?php echo $Book_title ? Required>"></td>
 							</tr>
 							
 							<tr>
 								<th>Book Author</th>
-								<td><input type="text" id="Book_author" name="Book_author" value="<?php echo $Book_author ?>"></td>
+								<td><input type="text" id="Book_author" name="Book_author" value="<?php echo $Book_author ?>" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Description</th>
-								<td><input type="text" id="Book_desc" name="Book_desc" value="<?php echo $Book_desc ?>"></td>
+								<td><input type="text" id="Book_desc" name="Book_desc" value="<?php echo $Book_desc ?>" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Publication Date</th>
-								<td><input type="date" id="publication_date" name="publication_date" value="<?php echo $publication_date ?>"></td>
+								<td><input type="date" id="publication_date" name="publication_date" value="<?php echo $publication_date ?>" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Number of Pages</th>
-								<td><input type=number id="totalPages" name="totalPages" value="<?php echo $totalPages ?>"></td>
+								<td><input type=number id="totalPages" name="totalPages" value="<?php echo $totalPages ?>" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Rating</th>
-								<td><input type=number id="Book_rating" name="Book_rating" value="<?php echo $Book_rating ?>"></td>
+								<td><input type=number id="Book_rating" name="Book_rating" value="<?php echo $Book_rating ?>" Required></td>
 							</tr>
 						</table><br>
 						
 						<input type="button" value="Back" onclick="location.href='./BookList.php'">
-						<input type="submit" name="Update" value="Update" onclick="updateBook()">
+						<input type="submit" name="Update" value="Update" onclick="return updateBook()">
 					</center>
 				</form>
               </div>
@@ -226,14 +226,7 @@
   <script>
   function updateBook()
   {
-	if (confirm("Please confirm all the details of the book is correct"))
-	{
-		alert("The book was successfully updated");
-	}
-	else
-	{
-		alert("Cancelled");
-	}
+	return confirm("Please confirm all the details are correct.");
   }
   </script>
 
