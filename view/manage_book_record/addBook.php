@@ -109,48 +109,48 @@
 				<p class="animate__animated animate__fadeInUp">Please fill in the details below to add new books into the system</p>
 				
 				<!-- form to add new books -->
-				<form action="addBookController.php" method="POST">
+				<form action="../../controller/manage_book_record/addBookController.php" method="POST">
 				<input type="hidden" name="action" value="insert">
 					<center>
 						<table>
 							<tr>
 								<th>ISBN</th>
-								<td><input type="text" id="ISBN" name="ISBN" placeholder="ISBN"></td>
+								<td><input type="text" id="ISBN" name="ISBN" placeholder="ISBN" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Title</th>
-								<td><input type="text" id="Book_title" name="Book_title" placeholder="Book Title"></td>
+								<td><input type="text" id="Book_title" name="Book_title" placeholder="Book Title" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Author</th>
-								<td><input type="text" id="Book_author" name="Book_author" placeholder="Book Author"></td>
+								<td><input type="text" id="Book_author" name="Book_author" placeholder="Book Author" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Description</th>
-								<td><input type="text" id="Book_desc" name="Book_desc" placeholder="Book Description"></td>
+								<td><input type="text" id="Book_desc" name="Book_desc" placeholder="Book Description" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Publication Date</th>
-								<td><input type="date" id="publication_date" name="publication_date" placeholder="Publication Date"></td>
+								<td><input type="date" id="publication_date" name="publication_date" placeholder="Publication Date" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Number of Pages</th>
-								<td><input type=number id="totalPages" name="totalPages" placeholder="Number of Pages"></td>
+								<td><input type=number id="totalPages" name="totalPages" placeholder="Number of Pages" Required></td>
 							</tr>
 							
 							<tr>
 								<th>Book Rating</th>
-								<td><input type=number id="Book_rating" name="Book_rating" placeholder="Book Rating"></td>
+								<td><input type=number id="Book_rating" name="Book_rating" placeholder="Book Rating" Required></td>
 							</tr>
 						</table><br>
 						
 						<input type="button" value="Back" onclick="location.href='./manage_book_record.php'">
-						<input type="submit" value="Submit" name="Confirm" onclick="addBook()">
+						<input type="submit" value="Submit" name="Confirm" onclick="return addBook()">
 						<input type="reset" value="Reset">
 					</center>
 				</form>
@@ -201,14 +201,7 @@
   <script>
   function addBook()
   {
-	if (confirm("Please confirm that all the details of the book is correct"))
-	{
-		alert("The book was successfully inserted into the system");
-	}
-	else
-	{
-		alert("Cancelled");
-	}
+	return confirm("Please ensure all the deatils entered are correct.");
   }
   </script>
 
