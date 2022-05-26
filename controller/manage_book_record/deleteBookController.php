@@ -17,8 +17,10 @@
 		
 		if($result)
 		{
-			echo "Data successfully deleted from system";
-			header("location:BookList.php");
+			echo "<script>
+			alert('Book Deleted Succesfully!');
+			window.location.href='../../view/manage_book_record/BookList.php';
+			</script>";
 		}
 		
 		else
