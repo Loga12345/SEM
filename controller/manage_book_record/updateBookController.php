@@ -30,8 +30,10 @@
 		
 		if($result)
 		{
-			echo "Data successfully updated";
-			header("location:BookList.php");
+			echo "<script>
+			alert('Book Updated Succesfully!');
+			window.location.href='../../view/manage_book_record/BookList.php';
+			</script>";
 		}
 		else
 		{

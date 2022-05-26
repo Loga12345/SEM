@@ -23,8 +23,10 @@
 		
 		if($result)
 		{
-			echo "Data successfully added into the system";
-			header("location:../../view/manage_book_record/BookList.php");
+			echo "<script>
+			alert('Book Added Succesfully!');
+			window.location.href='../../view/manage_book_record/BookList.php';
+			</script>";
 		}
 		else
 		{
