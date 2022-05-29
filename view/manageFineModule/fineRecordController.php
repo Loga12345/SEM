@@ -1,5 +1,5 @@
 <?php
-	$conn = mysqli_connect("localhost", "root", "", "lms_db");
+		$conn = mysqli_connect("localhost", "root", "", "lms_db");
 	
 	if(!$conn) 
 	{ 
@@ -8,21 +8,21 @@
 	
 	if(isset($_POST['Confirm']))
 	{
-		$id = $_POST['id'];
-		$borrower_name = $_POST['borrower_name'];
-		$days = $_POST['days'];
-		$fine = $_POST['fine'];
-		$total = $_POST['total'];
+		$ISBN = $_POST['GetISBN'];
+		$Book_title = $_POST['Book_title'];
+		$Book_author = $_POST['Book_author'];
+		$publication_date = $_POST['publication_date'];
+		$totalPages = $_POST['totalPages'];
 		
 		$query = "INSERT INTO calculatefine (id, borrower_name, days, fine, total)
-					VALUES ('$id', '$borrower_name', '$days', '$fine', '$total')";
+					VALUES ('$ISBN', '$Book_title', '$Book_author', '$publication_date', '$totalPages')";
 
 		$result = mysqli_query($conn, $query);
 		
 		if($result)
 		{
 			echo "Data successfully added into the system";
-			header("location:../../view/manageFineModule/viewFineDetails.php");
+			header("location:../../view/manageFineModule/viewfine.php");
 		}
 		else
 		{

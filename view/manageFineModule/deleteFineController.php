@@ -1,5 +1,5 @@
 <?php
-	$conn = mysqli_connect("localhost", "root", "", "lms_db");
+		$conn = mysqli_connect("localhost", "root", "", "lms_db");
 	
 	if(!$conn) 
 	{ 
@@ -18,7 +18,7 @@
 		if($result)
 		{
 			echo "Data successfully deleted from system";
-			header("location:viewFineDetails.php");
+			header("location:viewfine.php");
 		}
 		
 		else
@@ -28,6 +28,6 @@
 	}
 	else
 	{
-		header("location:viewFineDetails.php");
+		header("location:viewfine.php");
 	}
 ?>
