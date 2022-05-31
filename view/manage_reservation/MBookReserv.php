@@ -128,7 +128,7 @@
                           value="<?php if (isset($_GET['ISBN'])) echo($_GET['ISBN']); ?>"
                           placeholder="Enter ISBN">
                   </div><br>
-
+<!-- change search -->
                   <div class="form-group">
                     <label for="BookName">Book Name</label>
                     <input type="text" 
