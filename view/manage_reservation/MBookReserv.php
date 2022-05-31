@@ -128,15 +128,10 @@
                           value="<?php if (isset($_GET['ISBN'])) echo($_GET['ISBN']); ?>"
                           placeholder="Enter ISBN">
                   </div><br>
-<!-- change search -->
+<!-- Autocomplete dropdown -->  
                   <div class="form-group">
-                    <label for="BookName">Book Name</label>
-                    <input type="text" 
-                          class="form-control" 
-                          id="BookName" 
-                          name="BookName"
-                          value="<?php if (isset($_GET['BookName'])) echo($_GET['BookName']); ?>" 
-                          placeholder="Enter Book Name">
+                    <input type="text" name="search_box" placeholder="Enter Book Name">
+                    <span id="search_result"></span>
                   </div><br>
 
                   <div class="form-group">
