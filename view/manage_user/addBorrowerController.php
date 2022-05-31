@@ -29,7 +29,7 @@
 		else
 		{
 			die("Error inserting data !  ".$conn->error);
-			header("location:AddBorrower.php");
+			//header("location:AddBorrower.php");
 		}
 	}
 	

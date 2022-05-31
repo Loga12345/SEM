@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	$conn = mysqli_connect("localhost", "root", "", "lms_db");
 	
 	if(!$conn) 
@@ -191,7 +192,17 @@
 							<td><?php echo $name ?></td>
 							<td><?php echo $phoneNum ?></td>
 							<td><?php echo $Email ?></td>
-							<td><a id="greenlinks" href="LibrarianListDetails.php?GetLibrarian=<?php echo $librarianID ?>">View Details</a></td>
+							<td><a id="greenlinks" href="LibrarianListDetails.php?GetLibrarian=<?php echo $librarianID ?>">View Details</a>
+							
+							<?php
+								//echo $_SESSION['User'];
+								if ($_SESSION['User']==$username)
+								{
+							?>
+							&nbsp&nbsp&nbsp<a id="greenlinks" href="LibrarianEditDetails.php?GetLibrarian=<?php echo $librarianID ?>">Edit Profile</a></td>
+							<?php
+								}
+							?>
 						</tr>
 					  <?php
 						}
