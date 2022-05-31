@@ -193,8 +193,12 @@ $result = mysqli_query($conn, $sql);
                 <div class="container">
                   <h3  style="color: white;" class="animate__animated animate__fadeInDown"><b>Book Reports </b></h3>
                   <p class="animate__animated animate__fadeInUp" style="font-size:18px;">Search for records needed, view reports are available</p>
+                  
+                  <?php 
+                    echo isset($_GET['Book_title'])? $_GET['Book_title']: '';
+                  ?>
 
-                  <!--input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Title, ISBN or author" title="Type in a name"-->
+                  <input type="text" id="search" onkeyup="search('<?php echo isset($_GET['Book_title'])? $_GET['Book_title']: '';?>')" placeholder="Search by Title, ISBN or author" title="Type in a name">
 
                   <center>
 										<div class="table-wrapper-scroll-y my-custom-scrollbar">

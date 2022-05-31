@@ -192,7 +192,11 @@ $result = mysqli_query($conn, $sql);
                   <h2  style="color: white;" class="animate__animated animate__fadeInDown"><b>Fine Reports </b></h2>
                   <p class="animate__animated animate__fadeInUp" style="font-size:18px;">Search for records needed, view reports are available</p>
 
-                  <!--input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Title, ISBN or author" title="Type in a name"-->
+                  <?php 
+                    echo isset($_GET['borrower_name'])? $_GET['borrower_name']: '';
+                  ?>
+
+                  <input type="text" id="search" onkeyup="search('<?php echo isset($_GET['borrower_name'])? $_GET['borrower_name']: '';?>')" placeholder="Search by Name or ID" title="Type in a name">
 
                   <center>
                     <div class="table-wrapper-scroll-y my-custom-scrollbar">

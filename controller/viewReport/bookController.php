@@ -22,3 +22,11 @@ while($row=mysqli_fetch_assoc($result))
 	$totalPages = $row['totalPages'];
 }
 ?>
+
+<?php
+include "DatabaseCon.php";
+
+$sql = "SELECT ISBN, Book_title, Book_author, publication_date FROM book ORDER BY ISBN";
+$result = mysqli_query($conn,$sql);
+
+?>
