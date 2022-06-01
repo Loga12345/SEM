@@ -77,11 +77,27 @@
 		width: 80%;
 	}
 	
+  #submitButton
+	{
+		border-radius: 12px;
+		padding: 15px 60px;
+		font-weight: bold;
+		background: #ffe033;
+		text-align : center;
+		font-size : 20px;
+	}
+
+  #submitButton:hover
+	{
+		background: black;
+		color: #ffe033;
+	}
+
 	#backButton
 	{
 		border-radius: 12px;
 		padding: 15px 20px;
-		font-color: black;
+		font-weight: bold;
 		background: #ffe033;
 		text-align : center;
 		font-size : 20px;
@@ -176,8 +192,7 @@
 						</table><br>
 						
 						<input type="button" id="backButton" name="Back" value="Back" onclick="location.href='./LibrarianList.php'">
-            <input type="submit" id="backButton" name="Update" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-            onclick="UpdateLibrarian()">
+            <input type="submit" id="submitButton" name="Update" value="Update" onclick="UpdateLibrarian()">
           </form>
 					</center>
 				
