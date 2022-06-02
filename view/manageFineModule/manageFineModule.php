@@ -25,6 +25,16 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <style>
+
+h3 { 
+  word-spacing: 2cm;
+  font-weight: 700;
+  color: white;
+}
+</style>
+
+
 </head>
 
 <body>
@@ -80,11 +90,21 @@
                 <h2 class="animate__animated animate__fadeInDown">Fine Management</h2>
                
 				<form action="manageFine.php" method="post">	
-					<input type="button" value="Add Borrower" onclick="location.href='./addBorrowerDetails.php'">
-					<input type="button" value="View Details" onclick="location.href='./viewDetails.php'">
-					<input type="button" value="View Fine" onclick="location.href='./viewfine.php'">
-					<input type="button" value="Add Fine Details" onclick="location.href='./calculateFine.php'">
+        <p>Do click on the image</p>
+         <a href="./addBorrowerDetails.php">
+         <img src="https://www.cairns.qld.gov.au/__data/assets/image/0006/319632/borrow-book.png" alt="HTML tutorial" style="width:300px;height:300px;">
+         </a>
+         <a href="./viewDetails.php">
+         <img src="https://bookstr.com/wp-content/uploads/2021/07/Books-in-arms-via-underlined.png" alt="HTML tutorial" style="width:300px;height:300px;">
+         </a>
+         <a href="./calculateFine.php">
+         <img src="https://e7.pngegg.com/pngimages/948/219/png-clipart-journalism-writing-others-essay-journalism.png" alt="HTML tutorial" style="width:300px;height:300px;">
+         </a>	
+         <a href="./viewfine.php">
+         <img src="https://about.fb.com/wp-content/uploads/2022/03/Widely-VIewed-Content-Report-Q4-2021_Header.jpg?fit=1920%2C1080" alt="HTML tutorial" style="width:300px;height:300px;">
+         </a>
 				</form>
+        <h3>AddBorrower  ViewBorrowerDetails  AddReport ViewReportDetails</h3>
 			  </div>
             </div>
           </div>

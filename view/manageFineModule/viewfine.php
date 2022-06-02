@@ -2,13 +2,13 @@
 session_start();
 $conn = mysqli_connect("localhost", "root", "", "lms_db");
 
-if(!$connection)
+if(!$conn)
 {
 	echo "Database connection faild...";
 }
 
 
-$result = mysqli_query($connection, "SELECT * FROM calculate_fine ");
+$result = mysqli_query($conn, "SELECT * FROM calculatefine ");
 $row= mysqli_fetch_array($result);
 
 ?>
