@@ -1,6 +1,10 @@
 <?php
 include "DatabaseCon.php";
 
+$sql = "SELECT id, borrower_name, days, fine, total FROM calculatefine ORDER BY id";
+
+$result = mysqli_query($conn, $sql);
+
 $id = $_GET['GetFineReport'];
 $sql = "SELECT id, borrower_name, days, fine, total
         FROM calculatefine
