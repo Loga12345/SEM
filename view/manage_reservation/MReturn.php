@@ -124,17 +124,7 @@
                           value="<?php if (isset($_GET['BorrowerName'])) echo($_GET['BorrowerName']); ?>"
                           placeholder="Enter Borrower Name">
                   </div>
-
-                  <div class="form-group">
-                    <label for="ISBN" >ISBN</label>
-                    <input type="text" 
-                          class="form-control" 
-                          id="ISBN" 
-                          name="ISBN" 
-                          value="<?php if (isset($_GET['ISBN'])) echo($_GET['ISBN']); ?>"
-                          placeholder="Enter ISBN">
-                  </div>
-
+                  
                   <div class="form-group">
                     <label for="BookName">Book Name</label>
                     <input type="text" 
