@@ -117,16 +117,6 @@
                   </div><br>
 
                   <div class="form-group">
-                    <label for="ISBN" >ISBN</label>
-                    <input type="text" 
-                          class="form-control" 
-                          id="ISBN" 
-                          name="ISBN" 
-                          value="<?=$row['ISBN']; ?>"
-                    >
-                  </div><br>
-
-                  <div class="form-group">
                     <label for="BookName">Book Name</label>
                     <input type="text" 
                           class="form-control" 
