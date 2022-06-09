@@ -32,7 +32,6 @@ if (isset($_GET['ReturnBookID'])) {
 	}
 
     $BorrowerName = validate($_POST['BorrowerName']);
-    $ISBN = validate($_POST['ISBN']);
     $BookName = validate($_POST['BookName']);
     $BorrowDate = validate($_POST['BorrowDate']);
     $ReturnDate = validate($_POST['ReturnDate']);
@@ -41,9 +40,6 @@ if (isset($_GET['ReturnBookID'])) {
 
     if (empty($BorrowerName)) {
         header("Location: ../EditReturn.php?ReturnBookID=$ReturnBookID&error=Borrower Name is required");
-    }
-    else if (empty($ISBN)) {
-        header("Location: ../EditReturn.php?ReturnBookID=$ReturnBookID&error=ISBN is required");
     }
     else if (empty($BookName)) {
         header("Location: ../EditReturn.php?ReturnBookID=$ReturnBookID&error=Book Name is required");
