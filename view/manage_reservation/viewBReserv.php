@@ -102,7 +102,6 @@
                         <tr>
                         <th scope="col">Book Reservation ID</th>
                         <th scope="col">Borrower Name</th>
-                        <th scope="col">ISBN</th>
                         <th scope="col">Book Name</th>
                         <th scope="col">Borrow Date</th>
                         <th scope="col">Return Date</th>
@@ -118,7 +117,6 @@
                         <tr>
                         <th scope="row"><?=$n?></th>
                         <td><?=$rows['BorrowerName']?></td>
-                        <td><?php echo $rows['ISBN']; ?></td>
                         <td><?php echo $rows['BookName']; ?></td>
                         <td><?php echo $rows['BorrowDate']; ?></td>
                         <td><?php echo $rows['ReturnDate']; ?></td>
