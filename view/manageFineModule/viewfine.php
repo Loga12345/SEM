@@ -143,6 +143,20 @@ $row= mysqli_fetch_array($result);
 	{
 		display: block;
 	}
+	input.right {
+        float: right;
+      }
+  .topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.button2 {background-color: #008CBA;} 
+
   </style>
 
 </head>
@@ -190,6 +204,12 @@ $row= mysqli_fetch_array($result);
           <div class="carousel-item active" style="background-image: url(assets/img/book/book1.jpg)">
             <div class="carousel-container">
               <div class="container">
+			  <div class="topnav">
+              <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
+              <a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a><a></a>
+			  <a></a><a></a><a></a><a></a><a></a><a></a>
+             <input type="button"  value="+" onclick="location.href='./calculateFine.php'"><br>
+              </div>
                 <h2 class="animate__animated animate__fadeInDown">List Of Fines</h2>
 				<center>
 					
@@ -231,7 +251,6 @@ $row= mysqli_fetch_array($result);
 					</div><br><br>
 					
 					<input type="button" value="Back " onclick="location.href='./manageFineModule.php'">
-					<input type="button" value="Add New Fine" onclick="location.href='./calculateFine.php'"><br>
 					
 				</center>
 				
