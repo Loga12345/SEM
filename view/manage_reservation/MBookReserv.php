@@ -47,6 +47,12 @@
     .form-group{
       color:black;
     }
+
+    .select {
+    width: 480px;
+		padding: 10px;
+    border-color: white;
+    }
 	</style>
 
 </head>
@@ -120,18 +126,22 @@
                   </div><br>
 
                   <div class="form-group">
-                    <label for="ISBN" >ISBN</label>
-                    <input type="text" 
-                          class="form-control" 
-                          id="ISBN" 
-                          name="ISBN" 
-                          value="<?php if (isset($_GET['ISBN'])) echo($_GET['ISBN']); ?>"
-                          placeholder="Enter ISBN">
-                  </div><br>
-<!-- Autocomplete dropdown -->  
-                  <div class="form-group">
-                    <input type="text" name="search_box" placeholder="Enter Book Name">
-                    <span id="search_result"></span>
+                  <label for="BookName">Book Name</label>
+                      <select name="BookName" id="BookName" class="select">
+                        <?php 
+                          include "DatabaseCon.php";
+
+                          $sql = "SELECT Book_title FROM book ";
+                          $result = mysqli_query($conn, $sql);
+
+                          while($rows = $result->fetch_assoc()){
+                            $Book_title = $rows['Book_title'];
+                            echo "<option value='$Book_title'>$Book_title</option>";
+                          }
+
+                          if (isset($_GET['BookName'])) echo($_GET['BookName']);
+                          ?>
+                          </select>
                   </div><br>
 
                   <div class="form-group">

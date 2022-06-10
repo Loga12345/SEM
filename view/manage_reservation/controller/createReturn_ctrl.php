@@ -9,18 +9,15 @@ if (isset($_POST['create'])) {
     }
 
     $BorrowerName = validate($_POST['BorrowerName']);
-    $ISBN = validate($_POST['ISBN']);
     $BookName = validate($_POST['BookName']);
     $BorrowDate = validate($_POST['BorrowDate']);
     $ReturnDate = validate($_POST['ReturnDate']);
     $ReturnStatus = validate($_POST['ReturnStatus']);
 
-    $ReturnData = 'BorrowerName'.$BorrowerName. 'ISBN'.$ISBN. 'BookName'.$BookName. 'BorrowDate'.$BorrowDate. 'ReturnDate'.$ReturnDate.'ReturnStatus'.$ReturnStatus ;
+    $ReturnData = 'BorrowerName'.$BorrowerName. 'BookName'.$BookName. 'BorrowDate'.$BorrowDate. 'ReturnDate'.$ReturnDate.'ReturnStatus'.$ReturnStatus ;
 
     if (empty($BorrowerName)){
         header("Location: ../MReturn.php?error=Borrower Name is required&$ReturnData");
-    }elseif (empty($ISBN)){
-        header("Location: ../MReturn.php?error=ISBN is required&$ReturnData");
     }elseif (empty($BookName)){
         header("Location: ../MReturn.php?error=Book Name is required&$ReturnData");
     }

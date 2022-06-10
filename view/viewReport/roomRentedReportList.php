@@ -138,6 +138,20 @@ $result = mysqli_query($conn, $sql);
             display: block;
         }
 
+        #searchButton{
+  
+  border-radius: 12px;
+  padding: 10px 30px;
+  font-size: 20px;
+  font-color: black;
+  background: #ffd600;
+  text-align: center;
+}
+  
+#searchButton:hover{
+  background: black;
+  color: #ffd600;
+}
   </style>
 
   </head>
@@ -193,8 +207,13 @@ $result = mysqli_query($conn, $sql);
 									<h2  style="color: white;" class="animate__animated animate__fadeInDown"><b>Room Rent Report </b></h2>
                   <p class="animate__animated animate__fadeInUp" style="font-size:18px;">Search for records needed, view reports are available</p>
 
-                  <!--input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by Title, ISBN or author" title="Type in a name"-->
-                  <!--buka kembali nanti-->
+              <div class="main">
+                <form method="POST" action="roomReportSearch.php">
+                  <input type="text" class="form-control" name="search" placeholder="Room ID"><br>
+                  <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </form>
+              </div>
+              <br>
 
                   <center>
 										<div class="table-wrapper-scroll-y my-custom-scrollbar">
@@ -212,7 +231,7 @@ $result = mysqli_query($conn, $sql);
 							              </tr>
 
 														<?php
-														$n = 0;
+														if (mysqli_num_rows($result) > 0){
 															while($row=mysqli_fetch_assoc($result))
 															{
 																$RoomReservID = $row['RoomReservID'];
@@ -231,6 +250,10 @@ $result = mysqli_query($conn, $sql);
 															</tr>
 															<?php
 															}
+                            } else {
+                            echo "0 results";
+                    
+                            }
 															?>
 			          				</table><br>
 											</div>

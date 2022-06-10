@@ -99,7 +99,7 @@
                   <p class="animate__animated animate__fadeInUp">View Each Reports Recorded in System </p>
 
                       <input type="button" value="Book Report" onclick="location.href='./bookReportList.php'">
-                      <input type="button" value="Room Reservation Report" onclick="location.href='./roomRentedReportList.php'"><br>
+                      <input type="button" value="Room Reservation Report" onclick="location.href='./roomRentedReportList.php'"><br><br>
                       <input type="button" value="Fine Report" onclick="location.href='./finedRecordReportList.php'">
                       <!--<input type="button" value="Book Reservation Report" onclick="location.href='./BookReserveReport.php'"><br> -->
 

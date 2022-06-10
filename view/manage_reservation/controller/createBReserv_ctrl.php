@@ -9,17 +9,14 @@ if (isset($_POST['create'])) {
     }
 
     $BorrowerName = validate($_POST['BorrowerName']);
-    $ISBN = validate($_POST['ISBN']);
     $BookName = validate($_POST['BookName']);
     $BorrowDate = validate($_POST['BorrowDate']);
     $ReturnDate = validate($_POST['ReturnDate']);
 
-    $BookReservData = 'BorrowerName'.$BorrowerName. 'ISBN'.$ISBN. 'BookName'.$BookName. 'BorrowDate'.$BorrowDate. 'ReturnDate'.$ReturnDate;
+    $BookReservData = 'BorrowerName'.$BorrowerName. 'BookName'.$BookName. 'BorrowDate'.$BorrowDate. 'ReturnDate'.$ReturnDate;
 
     if (empty($BorrowerName)){
         header("Location: ../MBookReserv.php?error=Borrower Name is required&$BookReservData");
-    }elseif (empty($ISBN)){
-        header("Location: ../MBookReserv.php?error=ISBN is required&$BookReservData");
     }elseif (empty($BookName)){
         header("Location: ../MBookReserv.php?error=Book Name is required&$BookReservData");
     }
