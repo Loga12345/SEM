@@ -197,15 +197,16 @@ $result = mysqli_query($conn, $sql);
             <div class="carousel-item active" style="background-image: url(assets/img/book/book1.jpg)">
               <div class="carousel-container">
                 <div class="container">
-                  <h3  style="color: white;" class="animate__animated animate__fadeInDown"><b>Book Reports </b></h3>
+                  <h3  style="color: white;" class="animate__animated animate__fadeInDown"><b>Fine Reports </b></h3>
                   <p class="animate__animated animate__fadeInUp" style="font-size:18px;">Search for records needed, view reports are available</p>
 
               <div class="main">
                 <form method="POST" action="fineReportSearch.php">
-                  <input type="text" class="form-control" name="search" placeholder="Borrower Name"> <br>
+                <div style="display:flex;">
+                  <input type="text" class="form-control" name="search" placeholder="Borrower Name"> &nbsp;
                   <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </div>
                 </form>
-                  <input type="submit" name="list" id="listButton" value="List" onclick="location.href='./finedRecordReportList.php'">
               </div>
               <br>
                   <center>
@@ -217,7 +218,7 @@ $result = mysqli_query($conn, $sql);
               						                <td style="background-color:#00aea6; color: white"><b>ID</b></td>
               						                <td style="background-color:#00aea6; color: white"><b>NAME</b></td>
               						                <td style="background-color:#00aea6; color: white"><b>DAYS</b></td>
-									                <td style="background-color:#00aea6; color: white"><b>TOTAL (MYR)</b></td>
+									                        <td style="background-color:#00aea6; color: white"><b>TOTAL (MYR)</b></td>
               						                <td style="background-color:#00aea6; color: white"><b>ACTIONS</b></td>
 												  </tr>
 
@@ -256,7 +257,7 @@ $result = mysqli_query($conn, $sql);
 
 											</div>
                       <br>
-                    <input id="but" type="button" value="Back" onclick="location.href='bookReportList.php'">
+                    <input id="but" type="button" value="Back" onclick="location.href='finedRecordReportList.php'">
 
 									</center>
                 </div>

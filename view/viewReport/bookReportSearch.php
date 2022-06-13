@@ -202,10 +202,11 @@ $result = mysqli_query($conn, $sql);
 
               <div class="main">
                 <form method="POST" action="bookReportSearch.php">
-                  <input type="text" class="form-control" name="search" placeholder="ISBN"> <br>
+                <div style="display:flex;">
+                  <input type="text" class="form-control" name="search" placeholder="ISBN"> &nbsp;
                   <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </div>
                 </form>
-                  <input type="submit" name="list" id="listButton" value="List" onclick="location.href='./bookReportList.php'">
               </div>
               <br>
                   <center>

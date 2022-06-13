@@ -70,14 +70,6 @@ $result = mysqli_query($conn, $sql);
     	  background-color: #ddd;
     	}
 
-    	#searchButton
-    	{
-    	  width: 100%;
-    	  font-size: 20px;
-    	  padding: 7px;
-    	  border: 1px solid #ddd;
-    	}
-
     	#greenlinks:link, #greenlinks:visited
     	{
     	  background-color: #00aea6;
@@ -138,20 +130,21 @@ $result = mysqli_query($conn, $sql);
             display: block;
         }
 
-        #searchButton{
+        #searchButton
+        {
+          border-radius: 12px;
+          padding: 10px 30px;
+          font-size: 20px;
+          font-color: black;
+          background: #ffd600;
+          text-align: center;
+        }
   
-  border-radius: 12px;
-  padding: 10px 30px;
-  font-size: 20px;
-  font-color: black;
-  background: #ffd600;
-  text-align: center;
-}
-  
-#searchButton:hover{
-  background: black;
-  color: #ffd600;
-}
+        #searchButton:hover{
+          background: black;
+          color: #ffd600;
+        }
+
   </style>
 
   </head>
@@ -169,7 +162,7 @@ $result = mysqli_query($conn, $sql);
               <nav id="navigateBar" class="navigateBar">
                 <ul>
                   <li><a href="../login/librarian.php">Home</a></li>
-					<li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+					        <li class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
 
                   <ul>
                     <li><a href="../manage_book_record.php">Manage Book Record</a></li>
@@ -209,8 +202,10 @@ $result = mysqli_query($conn, $sql);
 
               <div class="main">
                 <form method="POST" action="roomReportSearch.php">
-                  <input type="text" class="form-control" name="search" placeholder="Room ID"><br>
+                <div style="display:flex;">
+                  <input type="text" class="form-control" name="search" placeholder="Room ID"> &nbsp;
                   <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </div>
                 </form>
               </div>
               <br>
@@ -257,6 +252,7 @@ $result = mysqli_query($conn, $sql);
 															?>
 			          				</table><br>
 											</div>
+                      <br>
 										<input id="but" type="button" value="Back" onclick="location.href='ReportMain.php'">
 
           			</center>

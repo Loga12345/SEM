@@ -129,21 +129,23 @@ $result = mysqli_query($conn, $sql);
             display: block;
         }
        
-#searchButton, #listButton{
+      #searchButton
+      {
+        border-radius: 12px;
+        padding: 10px 30px;
+        font-size: 20px;
+        font-color: black;
+        background: #ffd600;
+        text-align: center;
+      }
   
-  border-radius: 12px;
-  padding: 10px 30px;
-  font-size: 20px;
-  font-color: black;
-  background: #ffd600;
-  text-align: center;
-}
-  
-#searchButton:hover, #listButton:hover{
-  background: black;
-  color: #ffd600;
-}
-  </style>
+      #searchButton:hover
+      {
+        background: black;
+        color: #ffd600;
+      }
+
+    </style>
 
   </head>
 
@@ -166,9 +168,9 @@ $result = mysqli_query($conn, $sql);
                   <ul>
                     <li><a href="manage_book_record.php">Manage Book Record</a></li>
                     <li><a href="../manage_user/ManageUser.php">Manage User</a></li>
-					<li><a href="../manageFineModule/manageFineModule.php">Manage Fine</a></li>
-					<li><a href="../manage_reservation/managereserv.php">Manage Reservation</a></li>
-					<li><a href="ReportMain.php">Report</a></li>
+					          <li><a href="../manageFineModule/manageFineModule.php">Manage Fine</a></li>
+					          <li><a href="../manage_reservation/managereserv.php">Manage Reservation</a></li>
+					          <li><a href="ReportMain.php">Report</a></li>
                   </ul>
                   </li>
 
@@ -197,17 +199,19 @@ $result = mysqli_query($conn, $sql);
             <div class="carousel-item active" style="background-image: url(assets/img/book/book1.jpg)">
               <div class="carousel-container">
                 <div class="container">
-                  <h3  style="color: white;" class="animate__animated animate__fadeInDown"><b>Book Reports </b></h3>
+                  <h3  style="color: white;" class="animate__animated animate__fadeInDown"><b>Room Rent Report </b></h3>
                   <p class="animate__animated animate__fadeInUp" style="font-size:18px;">Search for records needed, view reports are available</p>
 
               <div class="main">
                 <form method="POST" action="roomReportSearch.php">
-                  <input type="text" class="form-control" name="search" placeholder="Room ID"><br>
+                <div style="display:flex;">
+                  <input type="text" class="form-control" name="search" placeholder="Room ID"> &nbsp;
                   <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </div>
                 </form>
-                  <input type="submit" name="list" id="listButton" value="List" onclick="location.href='./finedRecordReportList.php'">
               </div>
               <br>
+
                   <center>
 										<div class="table-wrapper-scroll-y my-custom-scrollbar">
 
@@ -225,41 +229,40 @@ $result = mysqli_query($conn, $sql);
 												<?php
 											  	$con = new PDO("mysql:host=localhost;dbname=lms_db",'root','');
 
-                                                  if (isset($_POST["search_btn"])) {
-                                                      $str = $_POST["search"];
-                                                      $sth = $con->prepare("SELECT * FROM `roomreservation` WHERE RoomID = '$str'  ");
+                            if (isset($_POST["search_btn"])) {
+                              $str = $_POST["search"];
+                              $sth = $con->prepare("SELECT * FROM `roomreservation` WHERE RoomID = '$str'  ");
+                                
+                                $sth->setFetchMode(PDO:: FETCH_OBJ);
+                                $sth -> execute();
                                                   
-                                                      $sth->setFetchMode(PDO:: FETCH_OBJ);
-                                                      $sth -> execute();
-                                                  
-                                                      if($row = $sth->fetch())
-                                                      {
-                                                          ?>
+                              if($row = $sth->fetch())
+                                {
+                                  ?>
 
-													<tr id="list">
-                                                    <td><?php echo $row->RoomReservID ?></td>
-													<td><?php echo $row->BorrowerName ?></td>
-													<td><?php echo $row->RoomID ?></td>
-													<td><?php echo $row->RoomName ?></td>
-													<td><?php echo $row->reservDate ?></td>
-													<td><a id="greenlinks" href="viewReportRoom.php?GetRoomReport=<?php echo $row->RoomReservID ?>">View</a></td>
-													</tr>
+													        <tr id="list">
+                                    <td><?php echo $row->RoomReservID ?></td>
+													          <td><?php echo $row->BorrowerName ?></td>
+													          <td><?php echo $row->RoomID ?></td>
+													          <td><?php echo $row->RoomName ?></td>
+													          <td><?php echo $row->reservDate ?></td>
+                                    <td><a id="greenlinks" href="viewReportRoom.php?GetRoomReport=<?php echo $row->RoomReservID ?>">View</a></td>
+                                  </tr>
 
-                                                    <?php 
-	                                                    }
+                                  <?php 
+	                              }
     
-		                                            else{
-			                                            echo "No Reservation for this Room";
-		                                            }
+		                          else{
+			                          echo "No Reservation for this Room";
+		                          }
 
-                                                    }
-                                                    ?>
+                            }
+                                  ?>
 
 												</table><br><br>
-
-											</div>
+										</div>
                       <br>
-                    <input id="but" type="button" value="Back" onclick="location.href='bookReportList.php'">
+                    <input id="but" type="button" value="Back" onclick="location.href='roomRentedReportList.php'">
 
 									</center>
                 </div>

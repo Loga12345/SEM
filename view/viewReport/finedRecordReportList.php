@@ -68,14 +68,6 @@ $result = mysqli_query($conn, $sql);
     	  background-color: #ddd;
     	}
 
-    	#searchButton
-    	{
-    	  width: 100%;
-    	  font-size: 20px;
-    	  padding: 7px;
-    	  border: 1px solid #ddd;
-    	}
-
     	#greenlinks:link, #greenlinks:visited
     	{
     	  background-color: #00aea6;
@@ -209,8 +201,10 @@ $result = mysqli_query($conn, $sql);
 
               <div class="main">
                 <form method="POST" action="fineReportSearch.php">
-                  <input type="text" class="form-control" name="search" placeholder="Borrower Name"><br>
+                <div style="display:flex;">
+                  <input type="text" class="form-control" name="search" placeholder="Borrower Name"> &nbsp;
                   <input type="submit" name="search_btn" id="searchButton" value="Search">
+                </div>
                 </form>
               </div>
               <br>
